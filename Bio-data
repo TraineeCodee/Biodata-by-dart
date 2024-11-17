@@ -1,0 +1,43 @@
+import 'dart:io';
+
+void main() {
+  print('Welcome to the Biodata Generator!');
+  print('Please enter your details below:\n');
+
+  // Collect user details
+  stdout.write('Enter your full name: ');
+  String? name = stdin.readLineSync();
+
+  stdout.write('Enter your age: ');
+  int? age = int.tryParse(stdin.readLineSync() ?? '');
+
+  stdout.write('Enter your gender: ');
+  String? gender = stdin.readLineSync();
+
+  stdout.write('Enter your phone number: ');
+  String? phone = stdin.readLineSync();
+
+  stdout.write('Enter your email address: ');
+  String? email = stdin.readLineSync();
+
+  stdout.write('Enter your address: ');
+  String? address = stdin.readLineSync();
+
+  // Check for null or invalid inputs
+  if (name == null || name.isEmpty || age == null || gender == null || phone == null || email == null || address == null) {
+    print('\nError: Some fields are missing or invalid. Please try again.');
+    return;
+  }
+
+ 
+  print('\n====== YOUR BIODATA ======');
+  print('Name:       $name');
+  print('Age:        $age');
+  print('Gender:     $gender');
+  print('Phone:      $phone');
+  print('Email:      $email');
+  print('Address:    $address');
+  print('==========================');
+
+  print('\nThank you for using the Biodata Generator!');
+}
